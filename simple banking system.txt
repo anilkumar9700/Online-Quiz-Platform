@@ -1,0 +1,64 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    private static double balance=1000;
+    public static void main(String[] args) {
+        int choice=0;
+        Scanner sc=new Scanner(System.in);
+        do{
+            System.out.println("simple banking system");
+            System.out.println("1. Check Balance");
+            System.out.println("2. Deposite Balance");
+            System.out.println("3. withdraw Balance");
+            System.out.println("4. exit");
+            System.out.print("Enter your choice: ");
+            choice=sc.nextInt();
+        switch(choice)
+        {
+            case 1:
+                checkBalance();
+                break;
+            case 2:
+                depositeBalance(sc);
+                break;
+            case 3:
+                withdrawBalance(sc);
+                break;
+            case 4:
+                System.out.println("exiting bye!");
+                break;
+            default:
+            System.out.print("int valid");
+            
+        }
+    }while(choice!=4);
+    }
+        
+        private static void checkBalance()
+        {
+            System.out.println("total balance: "+balance);
+        }
+        private static void depositeBalance(Scanner sc)
+        {
+            System.out.println("enter the amount to be deposite");
+            double deposite=sc.nextInt();
+            balance+=deposite;
+            System.out.println("amount desposited successfully remaining balance"+balance);
+        }
+        private static void withdrawBalance(Scanner sc)
+        {
+            System.out.println("enter the amount to be withdraw");
+            int withdraw=sc.nextInt();
+            if(withdraw>balance)
+            {
+                System.out.println("in sufficient");
+            }
+            else{
+                balance-=withdraw;
+            
+            System.out.println("amount withdraw successfully remaining balance"+balance);
+        }
+        System.out.println("Hello, World!");
+    }
+}
